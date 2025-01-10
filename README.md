@@ -77,7 +77,10 @@ Este proyecto es una aplicación web para la gestión de alojamientos. Permite a
 
 ## Autor
 
-- **Nombre del Autor**: [Tu Nombre]
+- **Nombre del Autor**: [Grupo 6:
+Melvin Alexander González Ramos
+Luis Rolando Tobar
+Jose Adalid Jimenez Alas]
 - **Correo Electrónico**: [tu-email@example.com]
 
 ## Información Adicional
