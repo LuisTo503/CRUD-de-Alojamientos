@@ -1,0 +1,90 @@
+@startuml
+
+title Diagrama - Aplicacion
+
+package "Modelo" {
+  class AlojamientoModel {
+    +create()
+    +read()
+    +update()
+    +delete()
+  }
+
+  class UserModel {
+    +create()
+    +read()
+    +update()
+    +delete()
+  }
+
+  class ReservationModel {
+    +create()
+    +read()
+    +update()
+    +delete()
+  }
+}
+
+package "Vista" {
+  class alojamiento_form {
+  }
+
+  class user_form {
+  }
+
+  class reservation_form {
+  }
+
+  class dashboard {
+  }
+
+  class index {
+  }
+
+  class login {
+  }
+
+  class accommodation_details {
+  }
+}
+
+package "Controlador" {
+  class AlojamientoController {
+    +handleRequest()
+    +createOrUpdateAlojamiento()
+    +deleteAlojamiento()
+  }
+
+  class UserController {
+    +handleRequest()
+    +createOrUpdateUser()
+    +deleteUser()
+  }
+
+  class ReservationController {
+    +handleRequest()
+    +createOrUpdateReservation()
+    +deleteReservation()
+  }
+
+  class AuthController {
+    +handleRequest()
+    +login()
+    +logout()
+  }
+}
+
+AlojamientoModel <--> AlojamientoController
+UserModel <--> UserController
+ReservationModel <--> ReservationController
+
+AlojamientoController <--> alojamiento_form
+UserController <--> user_form
+ReservationController <--> reservation_form
+
+AuthController <--> login
+AlojamientoController <--> dashboard
+AlojamientoController <--> index
+AlojamientoController <--> accommodation_details
+
+@enduml

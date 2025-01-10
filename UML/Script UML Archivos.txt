@@ -1,0 +1,57 @@
+@startuml
+
+title  Diagram - carpetas
+
+package "accommodation-crud" {
+  package "config" {
+    file "database.php"
+  }
+
+  package "controllers" {
+    file "alojamiento_controller.php"
+    file "auth_controller.php"
+    file "reservation_controller.php"
+    file "user_controller.php"
+  }
+
+  package "models" {
+    file "alojamiento_model.php"
+    file "reservation_model.php"
+    file "user_model.php"
+  }
+
+  package "assets" {
+    package "css" {
+      file "styles.css"
+    }
+    package "images" {
+      file "El_Cuche.png"
+      file "image1.jpg"
+      file "image2.jpg"
+      file "image3.jpg"
+      file "image4.jpg"
+      file "image5.jpg"
+      file "avatar1.jpg"
+      file "avatar2.jpg"
+      file "avatar3.jpg"
+    }
+  }
+
+  package "views" {
+    file "alojamiento_form.php"
+    file "accommodation_details.php"
+    file "dashboard.php"
+    file "index.php"
+    file "login.php"
+    file "user_form.php"
+    package "partials" {
+      file "header.php"
+      file "footer.php"
+    }
+  }
+
+  file "README.md"
+}
+
+
+@enduml

@@ -1,0 +1,41 @@
+@startuml
+
+entity "users" {
+  * id : int
+  * username : varchar(255)
+  * password : varchar(255)
+  * email : varchar(255)
+  * balance : decimal(10,2)
+  * role : enum('admin','user')
+  * created_at : timestamp
+}
+
+entity "alojamientos" {
+  * id : int
+  * user_id : int
+  * name : varchar(255)
+  * description : text
+  * location : varchar(255)
+  * price : decimal(10,2)
+  * rooms : int
+  * availability : tinyint(1)
+  * image : varchar(255)
+  * created_at : timestamp
+}
+
+entity "reservations" {
+  * id : int
+  * alojamiento_id : int
+  * user_id : int
+  * checkin : date
+  * checkout : date
+  * price : decimal(10,2)
+  * total_amount : decimal(10,2)
+  * created_at : timestamp
+}
+
+users ||--o{ alojamientos : "user_id"
+alojamientos ||--o{ reservations : "alojamiento_id"
+users ||--o{ reservations : "user_id"
+
+@enduml

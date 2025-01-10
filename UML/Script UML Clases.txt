@@ -1,0 +1,55 @@
+@startuml
+
+title - Diagrama Clases
+
+
+class AlojamientoModel {
+  - id : int
+  - user_id : int
+  - name : varchar(255)
+  - description : text
+  - location : varchar(255)
+  - price : decimal(10,2)
+  - rooms : int
+  - availability : tinyint(1)
+  - image : varchar(255)
+  - created_at : timestamp
+  + create()
+  + read()
+  + update()
+  + delete()
+}
+
+class UserModel {
+  - id : int
+  - username : varchar(255)
+  - password : varchar(255)
+  - email : varchar(255)
+  - balance : decimal(10,2)
+  - role : enum('admin','user')
+  - created_at : timestamp
+  + create()
+  + read()
+  + update()
+  + delete()
+}
+
+class ReservationModel {
+  - id : int
+  - alojamiento_id : int
+  - user_id : int
+  - checkin : date
+  - checkout : date
+  - price : decimal(10,2)
+  - total_amount : decimal(10,2)
+  - created_at : timestamp
+  + create()
+  + read()
+  + update()
+  + delete()
+}
+
+AlojamientoModel "1" -- "0..*" ReservationModel : "alojamiento_id"
+UserModel "1" -- "0..*" ReservationModel : "user_id"
+UserModel "1" -- "0..*" AlojamientoModel : "user_id"
+@enduml
