@@ -81,6 +81,7 @@ Este proyecto es una aplicación web para la gestión de alojamientos. Permite a
 Melvin Alexander González Ramos, 
 Luis Rolando Tobar, 
 Jose Adalid Jimenez Alas]
+Alejandra Mena Villatoro
 - **Correo Electrónico**: []
 
 ## Información Adicional
